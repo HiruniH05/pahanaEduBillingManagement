@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="CSS/styles.css">
+<title>Billing</title>
+</head>
+
+
+<body>
+
+<header class="header">
+    <div class="header-content">
+      <h1>Pahana Edu Bookshop</h1>
+      
+     <div class="user-info">
+	  <a href="login.html" class="btn btn-secondary small">Login</a>
+	  <a href="signup.html" class="btn btn-primary small">Sign Up</a>
+	</div>
+	
+    </div>
+  </header>
+  
+   <nav class="navigation">
+    <ul class="nav-menu">
+      <li><a class="nav-btn" href="index.html">Dashboard</a></li>
+      <li><a class="nav-btn" href="customerMng.html">Customer Management</a></li>
+      <li><a class="nav-btn" href="items.html">Item Management</a></li>
+      <li><a class="nav-btn active" href="billing.html">Billing</a></li>
+      <li><a class="nav-btn" href="help.html">Help</a></li>
+    </ul>
+  </nav>
+  
+   <main class="main-content">
+    <section class="content-section active">
+      <div class="section-header"><h2>Billing</h2></div>
+      <div class="billing-container">
+        <div class="billing-form">
+          <h3>Create New Bill</h3>
+          <form>
+            <div class="form-group">
+              <label for="customerSelect">Select Customer</label>
+              <select id="customerSelect" required>
+                <option value="">Select a customer...</option>
+                
+              </select>
+            </div>
+            <div class="items-section">
+              <h4>Items</h4>
+              <div class="bill-item">
+                <select class="item-select" required>
+                  <option value="">Select item...</option>
+                 
+                </select>
+                <input type="number" placeholder="Qty" min="1" required>
+                <button type="button" class="btn btn-danger">Remove</button>
+              </div>
+              <button type="button" class="btn btn-secondary">Add Item</button>
+            </div>
+            <div class="bill-total"><h4>Total: LKR <span>0.00</span></h4></div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Generate Bill</button>
+              <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+</body>
+</html>
