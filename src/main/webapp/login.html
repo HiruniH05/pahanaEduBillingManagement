@@ -12,20 +12,22 @@
  <div class="auth-container">
     <div class="auth-box">
       <h2>Login</h2>
-      <form>
-        <div class="form-group">
-          <label for="loginEmail">Email</label>
-          <input type="email" id="loginEmail" required />
-        </div>
-        <div class="form-group">
-          <label for="loginPassword">Password</label>
-          <input type="password" id="loginPassword" required />
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Login</button>
-          <a href="signup.html" class="btn btn-secondary">Create Account</a>
-        </div>
-      </form>
+      <form action="login" method="post">
+		  <div class="form-group">
+		    <label for="loginUsername">Username</label>
+		    <input type="text" name="username" id="loginUsername" required />
+		  </div>
+		
+		  <div class="form-group">
+		    <label for="loginPassword">Password</label>
+		    <input type="password" name="password" id="loginPassword" required />
+		  </div>
+		
+		  <div class="form-actions">
+		    <button type="submit" class="btn btn-primary">Login</button>
+		    <a href="signup.html" class="btn btn-secondary">Create Account</a>
+		  </div>
+		</form>
     </div>
   </div>
   

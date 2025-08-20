@@ -73,9 +73,51 @@ body {
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: horizontal;
     min-height: 80px;
 }
+
+
+/* Horizontal layout for the form */
+.item-form-inline {
+    display: flex;
+    align-items: center;   /* vertically align inputs and button */
+    gap: 1rem;             /* space between inputs */
+    flex-wrap: wrap;       /* wrap on smaller screens */
+    margin-top: 1rem;
+}
+
+/* Form groups as inline items */
+.form-group2 {
+    flex: 1 1 auto;        /* grow and shrink as needed */
+    min-width: 150px;      /* prevents too small inputs on small screens */
+}
+
+/* Input styling */
+.form-group2 input {
+    width: 100%;            /* full width of form-group */
+    padding: 0.75rem;
+    border: 2px solid var(--neutral-200);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group2 input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button styling */
+.item-form-inline button {
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0; /* prevents shrinking */
+}
+
 
 /* Button Styles */
 .btn {
@@ -364,6 +406,8 @@ body {
     border-radius: 8px;
     font-size: 1rem;
 }
+
+
 
 /* Table Styles */
 .table-container {

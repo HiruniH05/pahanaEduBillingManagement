@@ -21,9 +21,10 @@
    <nav class="navigation">
 	    <ul class="nav-menu">
 	      <li><a class="nav-btn active" href="index.html">Dashboard</a></li>
-	      <li><a class="nav-btn" href="customerMng.html">Customer Management</a></li>
-	      <li><a class="nav-btn" href="items.html">Item Management</a></li>
-	      <li><a class="nav-btn" href="billing.html">Billing</a></li>
+	      <li><a class="nav-btn" href="customers">Customer Management</a></li>
+	      <li><a class="nav-btn" href="ListItemsServlet">Item Management</a></li>
+	      <li><a class="nav-btn" href="billing">Billing</a></li>
+	      <li><a class="nav-btn" href="reports">Reports</a></li>
 	      <li><a class="nav-btn" href="help.html">Help</a></li>
 	    </ul>
   </nav>
@@ -40,5 +41,13 @@
       </div>
     </section>
   </main>
+  
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("registered") === "true") {
+      alert("✅ Account created successfully! Welcome to the main page.");
+  }
+</script>
+
 </body>
 </html>

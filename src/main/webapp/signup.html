@@ -12,26 +12,40 @@
 <div class="auth-container">
     <div class="auth-box">
       <h2>Sign Up</h2>
-      <form>
-        <div class="form-group">
-          <label for="signupName">Full Name</label>
-          <input type="text" id="signupName" required />
-        </div>
-        <div class="form-group">
-          <label for="signupEmail">Email</label>
-          <input type="email" id="signupEmail" required />
-        </div>
-        <div class="form-group">
-          <label for="signupPassword">Password</label>
-          <input type="password" id="signupPassword" required />
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Create Account</button>
-          <a href="login.html" class="btn btn-secondary">Back to Login</a>
-        </div>
-      </form>
+      <form action="signup" method="post">
+		  <div class="form-group">
+		    <label for="signupUsername">Username</label>
+		    <input type="text" name="username" id="signupUsername" required />
+		  </div>
+		
+		  <div class="form-group">
+		    <label for="signupPassword">Password</label>
+		    <input type="password" name="password" id="signupPassword" required />
+		  </div>
+		
+		  <div class="form-group">
+		    <label for="signupRole">Role</label>
+		    <select name="role" id="signupRole" required>
+		      <option value="CUSTOMER">Customer</option>
+		      <option value="CASHIER">Cashier</option>
+		      <option value="ADMIN">Admin</option>
+		    </select>
+		  </div>
+		
+		  <div class="form-actions">
+		    <button type="submit" class="btn btn-primary">Create Account</button>
+		    <a href="login.html" class="btn btn-secondary">Back to Login</a>
+		  </div>
+	</form>
+
     </div>
   </div>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("error") === "true") {
+      alert("❌ Signup failed! Please try again.");
+  }
+</script>
   
 </body>
 </html>
