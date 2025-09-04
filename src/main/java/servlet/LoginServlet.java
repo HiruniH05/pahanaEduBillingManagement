@@ -39,13 +39,13 @@ public class LoginServlet extends HttpServlet {
             // Redirect based on role
             switch (role) {
                 case "ADMIN":
-                    response.sendRedirect("index.html");
+                    response.sendRedirect("DashboardServlet");
                     break;
                 case "CASHIER":
-                    response.sendRedirect("index.html");
+                    response.sendRedirect("DashboardServlet");
                     break;
                 case "CUSTOMER":
-                    response.sendRedirect("index.html");
+                    response.sendRedirect("DashboardServlet");
                     break;
             }
             
