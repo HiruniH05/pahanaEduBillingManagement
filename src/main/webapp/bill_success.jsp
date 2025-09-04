@@ -156,7 +156,7 @@
 
  <div class="buttons">
  
-        <form action="index.html" method="get">
+        <form action="DashboardServlet" method="get">
             <button type="submit" class="btn">Home</button>
         </form>
         

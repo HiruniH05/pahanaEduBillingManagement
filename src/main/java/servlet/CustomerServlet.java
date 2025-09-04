@@ -25,33 +25,30 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action"); // list | edit | delete
+        String action = req.getParameter("action");
+        String search = req.getParameter("search");
+
         try {
             if ("edit".equalsIgnoreCase(action)) {
                 int id = Integer.parseInt(req.getParameter("id"));
-                Customer c = null;
-				try {
-					c = customerDAO.findById(id);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+                Customer c = customerDAO.findById(id);
                 req.setAttribute("editCustomer", c);
-                forwardList(req, resp); // show list 
+                forwardList(req, resp);
             } else if ("delete".equalsIgnoreCase(action)) {
                 int id = Integer.parseInt(req.getParameter("id"));
-                try {
-					customerDAO.delete(id);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+                customerDAO.delete(id);
                 resp.sendRedirect(req.getContextPath() + "/customers");
+            } else if (search != null && !search.isBlank()) {
+                List<Customer> customers = customerDAO.search(search);
+                req.setAttribute("customers", customers);
+                req.getRequestDispatcher("customer.jsp").forward(req, resp);
             } else {
                 forwardList(req, resp);
             }
         } catch (SQLException e) {
             throw new ServletException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

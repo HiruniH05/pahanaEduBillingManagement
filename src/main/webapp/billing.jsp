@@ -69,15 +69,26 @@ document.addEventListener('change', (e)=>{
 <header class="header">
   <div class="header-content">
     <h1>Pahana Edu Bookshop</h1>
+    
     <div class="user-info">
-      <a href="login.jsp" class="btn btn-secondary small">Login</a>
-      <a href="signup.jsp" class="btn btn-primary small">Sign Up</a>
-    </div>
+  <%
+     String username = (String) session.getAttribute("username");
+     String role = (String) session.getAttribute("role");
+     if (username != null) {
+  %>
+       <span>Welcome, <b><%= username %></b> (<%= role %>)</span>
+       <a href="LogoutServlet" class="btn btn-danger small">Logout</a>
+  <% } else { %>
+       <a href="login.html" class="btn btn-secondary small">Login</a>
+       <a href="signup.html" class="btn btn-primary small">Sign Up</a>
+  <% } %>
+</div>
+    
   </div>
 </header>
 <nav class="navigation">
   <ul class="nav-menu">
-    <li><a class="nav-btn" href="index.html">Dashboard</a></li>
+    <li><a class="nav-btn" href="DashboardServlet">Dashboard</a></li>
     <li><a class="nav-btn" href="customers">Customer Management</a></li>
     <li><a class="nav-btn" href="ListItemsServlet">Item Management</a></li>
     <li><a class="nav-btn active" href="billing">Billing</a></li>
